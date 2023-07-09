@@ -154,9 +154,9 @@ def process_category(category):
         process_anime_folder(anime_folder, category)
 
 
-def scan_anime_folders():
-    for category in categories:
-        process_category(category)
-
-
-scan_anime_folders()
+# def scan_anime_folders():
+#     for category in categories:
+#         process_category(category)
+#
+#
+# scan_anime_folders()
