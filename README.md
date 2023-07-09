@@ -1,6 +1,6 @@
 ## Anime Synopsis Fetcher
 
-The Anime Synopsis Fetcher is a Python script that automates the process of fetching anime synopses from the AniList API and saving them into a `description.txt` file for each anime in your local anime collection. It helps you organize and keep track of the synopsis information for your favorite anime series.
+The Anime Synopsis Fetcher is a Python script that automates the process of fetching anime synopses from the AniList API and saving them into a `description.txt` file for each anime in your local anime collection. It helps you organize and keep track of the synopsis information for your favorite anime series. I personally use this so that I don't have to keep going to MyAnimeList or AniList just to check what the anime is about.
 
 ### Features
 
@@ -8,7 +8,7 @@ The Anime Synopsis Fetcher is a Python script that automates the process of fetc
 - Creates a `description.txt` file with the anime name, category, and synopsis.
 - Skips anime folders that already have a `description.txt` file.
 - Excludes anime folders with the name "OVA" or "OVAS" from the process.
-- Works with various anime categories such as Action, Airing, Comedy, Fantasy, Isekai, Kids, Mystery, Romance, Shonen, Slice of Life, Sports, and Uncategorized.
+- Works with various anime categories such as Action, Comedy, Fantasy, Isekai, Mystery, etc..
 
 ### How It Works
 
