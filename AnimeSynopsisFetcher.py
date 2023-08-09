@@ -25,6 +25,8 @@ categories = [
     "Uncategorized"
 ]
 
+missing_synopsis_files = []
+
 
 def search_anime(anime_name):
     # GraphQL query for anime search
@@ -64,7 +66,6 @@ def search_anime(anime_name):
         time.sleep(2)
 
 
-
 def process_anime_folder(folder_path, category):
     video_files = get_video_files(folder_path)
 
@@ -87,6 +88,8 @@ def process_anime_folder(folder_path, category):
         if validate_description_file(content):
             print(f"Skipping folder '{os.path.basename(folder_path)}'. Description file already exists.")
             return
+    else:
+        missing_synopsis_files.append(folder_path)
 
     anime_folder_name = os.path.basename(folder_path)
     anime_data = search_anime(anime_folder_name)
@@ -157,6 +160,12 @@ def process_category(category):
 def scan_anime_folders():
     for category in categories:
         process_category(category)
+
+    # Save the missing synopsis files to a text file
+    missing_synopsis_file_path = os.path.join(root_dir, "missing_synopsis_files.txt")
+    with open(missing_synopsis_file_path, "w", encoding="utf-8") as file:
+        for folder_path in missing_synopsis_files:
+            file.write(folder_path + "\n")
 
 
 scan_anime_folders()
